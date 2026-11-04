@@ -1,11 +1,11 @@
-# Phase 1 checklist
+# Phase 1 checklist (data understanding)
 
-- [ ] Verify Azure for Students eligibility and check subscription type; do not create billable resources yet.
-- [ ] Install Python 3.11/3.12, Git, VS Code.
-- [ ] Create and activate `.venv`; install `requirements.txt`.
-- [ ] Download UCI Online Retail II workbook into `data/raw/`.
-- [ ] Run the audit and read `reports/data_audit.json`.
-- [ ] Explain Invoice, StockCode, Quantity, InvoiceDate, Price, Customer ID, Country.
-- [ ] Record actual counts of missing values, duplicates, cancellations, and negative quantities.
-- [ ] Initialize Git, commit foundation, create first feature branch and PR.
-- [ ] Review target definition, snapshot dates and 90-day horizon before training.
+- [x] Azure for Students account activated (no resources created yet; deployment only after the local app works).
+- [x] Python 3.14.5, Git installed; virtual environment created and `requirements.txt` installed.
+- [x] UCI Online Retail II workbook downloaded to `data/raw/` (SHA-256 recorded in `docs/02_dataset.md`).
+- [x] Audit run on the real workbook; results in `reports/data_audit.json`.
+- [x] Data dictionary for Invoice, StockCode, Description, Quantity, InvoiceDate, Price, Customer ID, Country.
+- [x] Counts recorded: missing values, duplicates (incl. 1–9 Dec 2010 sheet overlap), cancellations, negative quantities, non-positive prices.
+- [x] Git initialised; foundation commit on `main`; `feature/data-understanding` branch.
+- [x] Target definition, monthly cutoffs, 365-day lookback and 90-day horizon justified (gap analysis: 80.7% of repeat gaps ≤ 90 days).
+- [ ] Push to GitHub (account `syedasif3018`) and open/merge PR #1.
