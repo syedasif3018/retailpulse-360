@@ -1,0 +1,118 @@
+{
+  "source": "UCI Online Retail II (dataset 502), https://doi.org/10.24432/C5CG6D",
+  "total_rows": 1067371,
+  "sheets": [
+    {
+      "sheet": "Year 2009-2010",
+      "rows": 525461,
+      "columns": [
+        "Invoice",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "Price",
+        "Customer ID",
+        "Country"
+      ],
+      "duplicate_rows": 6865,
+      "missing_by_column": {
+        "Invoice": 0,
+        "StockCode": 0,
+        "Description": 2928,
+        "Quantity": 0,
+        "InvoiceDate": 0,
+        "Price": 0,
+        "Customer ID": 107927,
+        "Country": 0
+      },
+      "date_min": "2009-12-01 07:45:00",
+      "date_max": "2010-12-09 20:01:00",
+      "cancellation_rows": 10206,
+      "negative_quantity_rows": 12326,
+      "nonpositive_price_rows": 3690,
+      "distinct_invoices": 28816,
+      "distinct_customers_nonmissing": 4383,
+      "distinct_stockcodes": 4632,
+      "distinct_countries": 40
+    },
+    {
+      "sheet": "Year 2010-2011",
+      "rows": 541910,
+      "columns": [
+        "Invoice",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "Price",
+        "Customer ID",
+        "Country"
+      ],
+      "duplicate_rows": 5268,
+      "missing_by_column": {
+        "Invoice": 0,
+        "StockCode": 0,
+        "Description": 1454,
+        "Quantity": 0,
+        "InvoiceDate": 0,
+        "Price": 0,
+        "Customer ID": 135080,
+        "Country": 0
+      },
+      "date_min": "2010-12-01 08:26:00",
+      "date_max": "2011-12-09 12:50:00",
+      "cancellation_rows": 9288,
+      "negative_quantity_rows": 10624,
+      "nonpositive_price_rows": 2517,
+      "distinct_invoices": 25900,
+      "distinct_customers_nonmissing": 4372,
+      "distinct_stockcodes": 4070,
+      "distinct_countries": 38
+    }
+  ],
+  "combined": {
+    "sheet": "combined",
+    "rows": 1067371,
+    "columns": [
+      "Invoice",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "Price",
+      "Customer ID",
+      "Country"
+    ],
+    "duplicate_rows": 34335,
+    "missing_by_column": {
+      "Invoice": 0,
+      "StockCode": 0,
+      "Description": 4382,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "Price": 0,
+      "Customer ID": 243007,
+      "Country": 0
+    },
+    "date_min": "2009-12-01 07:45:00",
+    "date_max": "2011-12-09 12:50:00",
+    "cancellation_rows": 19494,
+    "negative_quantity_rows": 22950,
+    "nonpositive_price_rows": 6207,
+    "distinct_invoices": 53628,
+    "distinct_customers_nonmissing": 5942,
+    "distinct_stockcodes": 5305,
+    "distinct_countries": 43
+  },
+  "sheet_overlap": {
+    "sheets": [
+      "Year 2009-2010",
+      "Year 2010-2011"
+    ],
+    "shared_invoice_count": 1088,
+    "rows_in_second_sheet_with_shared_invoice": 22523,
+    "shared_date_min": "2010-12-01 08:26:00",
+    "shared_date_max": "2010-12-09 20:01:00"
+  }
+}

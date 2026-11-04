@@ -33,9 +33,11 @@ py -3 -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-Download the workbook from the UCI dataset page, extract it if supplied as a ZIP, and save as `data/raw/online_retail_II.xlsx`.
+Tested with Python 3.14.5 on Windows 10. The virtual environment can live outside the repo (e.g. `C:\Users\<you>\.venvs\retailpulse-360`) if the project drive is short of space.
 
-Run the source-data audit from the repository root:
+Download https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip, extract it, and save the workbook as `data/raw/online_retail_II.xlsx`.
+
+Run the source-data audit from the repository root (the first run reads Excel in about 1.5 min and caches `data/processed/transactions_raw.parquet`):
 
 ```powershell
 python -m src.retailpulse.audit
@@ -46,7 +48,7 @@ The audit writes `reports/data_audit.json` and does not modify original data. It
 
 ## Phase roadmap
 
-1. Data understanding, data dictionary, audit and initial problem framing (in progress).
+1. Data understanding, data dictionary, audit and problem framing. Done: [problem statement](docs/01_problem_statement.md), [dataset & data dictionary](docs/02_dataset.md), [audit output](reports/data_audit.json).
 2. EDA, statistical tests, cleaning, SQL analytics.
 3. Leakage-safe labelled customer snapshots; baseline, 3+ classification models, tuning and evaluation.
 4. Segmentation/PCA, FastAPI, Streamlit, optional Power BI.
