@@ -18,7 +18,7 @@ The source data records transactions (invoice lines), not customers, and has no 
 | Target `churn_90d` | 1 = no valid purchase in [cutoff, cutoff + 90 days); 0 = at least one valid purchase in that window |
 | Features | Computed only from transactions strictly before the cutoff (cutoff is midnight on the 1st of a month), mainly from the previous 365 days: recency, frequency, monetary value, product variety, return behaviour, tenure, country |
 
-**Why 90 days?** A window much shorter than the typical gap between purchases would label normal customers as churned. In the cleaned data, the median gap between a customer's purchase days is 31 days and **80.7% of repeat-purchase gaps are ≤ 90 days** (80th percentile = 87 days). Not buying for 90 days is therefore unusual for an active customer, and the window is still short enough for the business to act on.
+**Why 90 days?** A window much shorter than the typical gap between purchases would label normal customers as churned. In the cleaned data, the median gap between a customer's purchase days is 32 days and **80.6% of repeat-purchase gaps are ≤ 90 days** (80th percentile = 88 days; see Figure 6 in `notebooks/02_eda_statistics.ipynb`). Not buying for 90 days is therefore unusual for an active customer, and the window is still short enough for the business to act on.
 
 ## 1.3 Objectives and success criteria
 1. **Data:** Audit, clean and document the transactions (duplicates, cancellations, missing customer IDs, invalid prices), with every decision written down.

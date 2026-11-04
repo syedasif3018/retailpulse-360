@@ -49,7 +49,7 @@ The audit writes `reports/data_audit.json` and does not modify original data. It
 ## Phase roadmap
 
 1. Data understanding, data dictionary, audit and problem framing. Done: [problem statement](docs/01_problem_statement.md), [dataset & data dictionary](docs/02_dataset.md), [audit output](reports/data_audit.json).
-2. EDA, statistical tests, cleaning, SQL analytics.
+2. Cleaning, EDA and statistical tests. Done: [cleaning module](src/retailpulse/cleaning.py), [cleaning log](reports/cleaning_log.json), [EDA notebook](notebooks/02_eda_statistics.ipynb), [figures](reports/figures/).
 3. Leakage-safe labelled customer snapshots; baseline, 3+ classification models, tuning and evaluation.
 4. Segmentation/PCA, FastAPI, Streamlit, optional Power BI.
 5. Optional cloud deployment, documentation, report and viva preparation.

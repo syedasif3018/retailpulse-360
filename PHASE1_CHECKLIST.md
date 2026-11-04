@@ -7,5 +7,5 @@
 - [x] Data dictionary for Invoice, StockCode, Description, Quantity, InvoiceDate, Price, Customer ID, Country.
 - [x] Counts recorded: missing values, duplicates (incl. 1–9 Dec 2010 sheet overlap), cancellations, negative quantities, non-positive prices.
 - [x] Git initialised; foundation commit on `main`; `feature/data-understanding` branch.
-- [x] Target definition, monthly cutoffs, 365-day lookback and 90-day horizon justified (gap analysis: 80.7% of repeat gaps ≤ 90 days).
+- [x] Target definition, monthly cutoffs, 365-day lookback and 90-day horizon justified (gap analysis: 80.6% of repeat gaps ≤ 90 days).
 - [ ] Push to GitHub (account `syedasif3018`) and open/merge PR #1.
