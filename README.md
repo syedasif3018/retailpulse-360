@@ -50,7 +50,7 @@ The audit writes `reports/data_audit.json` and does not modify original data. It
 
 1. Data understanding, data dictionary, audit and problem framing. Done: [problem statement](docs/01_problem_statement.md), [dataset & data dictionary](docs/02_dataset.md), [audit output](reports/data_audit.json).
 2. Cleaning, EDA and statistical tests. Done: [cleaning module](src/retailpulse/cleaning.py), [cleaning log](reports/cleaning_log.json), [EDA notebook](notebooks/02_eda_statistics.ipynb), [figures](reports/figures/).
-3. Leakage-safe labelled customer snapshots; baseline, 3+ classification models, tuning and evaluation.
+3. Churn modelling. Done: [modelling module](src/retailpulse/modeling.py), [notebook](notebooks/03_churn_modelling.ipynb), [results](reports/model_results.json). Gradient Boosting: test ROC-AUC 0.774, PR-AUC 0.746, macro-F1 0.693.
 4. Segmentation/PCA, FastAPI, Streamlit, optional Power BI.
 5. Optional cloud deployment, documentation, report and viva preparation.
 
