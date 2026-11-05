@@ -1,0 +1,47 @@
+{
+  "raw_rows": 1067371,
+  "dropped_exact_duplicates": 34335,
+  "filled_missing_description": 4275,
+  "dropped_reversed_purchase_lines": 1381,
+  "dropped_reversing_cancellation_lines": 1381,
+  "clean_rows": 1030274,
+  "rows_missing_customer_id": 235151,
+  "cancellation_rows": 17723,
+  "adjustment_rows": 6,
+  "non_product_rows": 5686,
+  "nonpositive_price_rows": 6019,
+  "valid_purchase_rows": 1002026,
+  "valid_purchase_rows_with_customer": 775265,
+  "customers_with_valid_purchase": 5851,
+  "valid_revenue_gbp": 19294200.55,
+  "valid_revenue_with_customer_gbp": 16718921.65,
+  "outliers": {
+    "Quantity": {
+      "q1": 1.0,
+      "q3": 12.0,
+      "upper_fence": 28.5,
+      "n_above_fence": 52687,
+      "pct_above_fence": 5.26,
+      "p99": 100.0,
+      "max": 19152.0
+    },
+    "Price": {
+      "q1": 1.25,
+      "q3": 4.13,
+      "upper_fence": 8.45,
+      "n_above_fence": 74948,
+      "pct_above_fence": 7.48,
+      "p99": 16.95,
+      "max": 1157.15
+    },
+    "Revenue": {
+      "q1": 4.13,
+      "q3": 17.700000000000003,
+      "upper_fence": 38.05500000000001,
+      "n_above_fence": 81729,
+      "pct_above_fence": 8.16,
+      "p99": 179.0,
+      "max": 38970.0
+    }
+  }
+}
