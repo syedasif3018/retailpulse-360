@@ -79,7 +79,7 @@ Snapshots: **1 Dec 2011** (latest data; outcome unknown, "who to contact now") a
 3. Churn modelling. Done: [modelling module](src/retailpulse/modeling.py), [notebook](notebooks/03_churn_modelling.ipynb), [results](reports/model_results.json). Gradient Boosting: test ROC-AUC 0.774, PR-AUC 0.746, macro-F1 0.693.
 4. Churn-risk dashboard. Done: [Streamlit app](app/streamlit_app.py), [scoring script](src/retailpulse/scoring.py).
 5. Cloud deployment. Done: [Azure App Service, Free F1](docs/04_deployment.md) via a slim [package](deploy/make_package.py).
-6. Report and viva preparation.
+6. Report. Done: [Word](reports/RetailPulse360_Report.docx) / [PDF](reports/RetailPulse360_Report.pdf) (20 pages, 16 figures, 13 tables).
 
 ## Methodology safeguards
 
