@@ -1,24 +1,26 @@
 # LinkedIn post (draft) and 60-second demo video plan
 
-## Post text (about 1,700 characters; paste as-is, then attach the video)
+## Post text (paste as-is: plain text, because LinkedIn does not render markdown; then attach the video)
+
+Length: 1,847 characters (LinkedIn limit 3,000).
 
 Which customers are about to stop buying, before they actually do? 📉
 
-I built **RetailPulse 360**, an end-to-end machine-learning project that predicts whether a business customer will make **no purchase in the next 90 days**.
+I built RetailPulse 360, an end-to-end machine-learning project that predicts whether a business customer will make no purchase in the next 90 days.
 
-🔹 **Data:** 1.07M real invoice lines from a UK online retailer (UCI Online Retail II, 2009–2011)
-🔹 **Cleaning:** removed 34k duplicate rows (most because the two yearly sheets overlap on 1–9 Dec 2010) and orders that were cancelled within a day
-🔹 **Target design:** 80.6% of repeat purchases happen within 90 days, so 90 days of silence is a meaningful churn signal
-🔹 **No data leakage:** features use only the past, labels only the future, and models are tested on a later month they never saw
-🔹 **Models:** two baselines vs Logistic Regression, Decision Tree, Random Forest and Gradient Boosting, tuned with scikit-learn pipelines
+🔹 Data: 1.07M real invoice lines from a UK online retailer (UCI Online Retail II, 2009–2011)
+🔹 Cleaning: removed 34k duplicate rows (most because the two yearly sheets overlap on 1–9 Dec 2010) and orders that were cancelled within a day
+🔹 Target design: 80.6% of repeat purchases happen within 90 days, so 90 days of silence is a meaningful churn signal
+🔹 No data leakage: features use only the past, labels only the future, and models are tested on a later month they never saw
+🔹 Models: two baselines vs Logistic Regression, Decision Tree, Random Forest and Gradient Boosting, tuned with scikit-learn pipelines
 
-📊 **Result:** Gradient Boosting reached **ROC-AUC 0.77** on the unseen test month, clearly beating a simple "no order in 90 days" rule (0.71). The riskiest 10% of customers churned at **82%**.
+📊 Result: Gradient Boosting reached ROC-AUC 0.77 on the unseen test month, clearly beating a simple "no order in 90 days" rule (0.71). The riskiest 10% of customers churned at 82%.
 
-💡 **Insight:** buying regularly every month matters far more than order size. Country had no link to churn (χ² p = 0.52).
+💡 Insight: buying regularly every month matters far more than order size. Country had no link to churn (χ² p = 0.52).
 
-🎓 **Key learning:** a random train/test split would have looked better and been wrong. Churn drops before Christmas, so only a time-based split gives honest numbers.
+🎓 Key learning: a random train/test split would have looked better and been wrong. Churn drops before Christmas, so only a time-based split gives honest numbers.
 
-The model runs in a **Streamlit dashboard deployed on Azure** (free tier): risk bands, a priority contact list sorted by revenue at risk, a what-if scorer and batch scoring.
+The model runs in a Streamlit dashboard deployed on Azure (free tier): risk bands, a priority contact list sorted by revenue at risk, a what-if scorer and batch scoring.
 
 🔗 Code, notebooks and report: https://github.com/syedasif3018/retailpulse-360
 🖥️ Live dashboard: https://retailpulse-360-541d.azurewebsites.net
