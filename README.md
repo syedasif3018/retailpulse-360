@@ -2,6 +2,8 @@
 
 **End-to-end customer churn prediction and retail analytics | CSE570 Machine Learning with Python**
 
+**Live dashboard:** https://retailpulse-360-541d.azurewebsites.net (Azure App Service, free tier; the first load after idle can take about a minute)
+
 ## Problem statement
 
 Given a customer's purchase history up to an observation cutoff, predict whether the customer will have **no qualifying purchase in the following 90 days**. This is a **customer-level binary classification** problem. We will define eligibility and qualifying purchases carefully before modelling. The broader solution will include segmentation, an analyst dashboard, an API and optional Azure deployment.
@@ -76,7 +78,8 @@ Snapshots: **1 Dec 2011** (latest data; outcome unknown, "who to contact now") a
 2. Cleaning, EDA and statistical tests. Done: [cleaning module](src/retailpulse/cleaning.py), [cleaning log](reports/cleaning_log.json), [EDA notebook](notebooks/02_eda_statistics.ipynb), [figures](reports/figures/).
 3. Churn modelling. Done: [modelling module](src/retailpulse/modeling.py), [notebook](notebooks/03_churn_modelling.ipynb), [results](reports/model_results.json). Gradient Boosting: test ROC-AUC 0.774, PR-AUC 0.746, macro-F1 0.693.
 4. Churn-risk dashboard. Done: [Streamlit app](app/streamlit_app.py), [scoring script](src/retailpulse/scoring.py).
-5. Optional cloud deployment, documentation, report and viva preparation.
+5. Cloud deployment. Done: [Azure App Service, Free F1](docs/04_deployment.md) via a slim [package](deploy/make_package.py).
+6. Report and viva preparation.
 
 ## Methodology safeguards
 
