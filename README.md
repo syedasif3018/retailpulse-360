@@ -46,12 +46,36 @@ python -m pytest -q
 
 The audit writes `reports/data_audit.json` and does not modify original data. It loads each Excel sheet separately to lower peak memory use. It may still take time on low-memory laptops.
 
+Full pipeline, in order:
+
+```powershell
+python -m src.retailpulse.cleaning          # -> data/processed/transactions_clean.parquet, reports/cleaning_log.json
+# run notebooks/02_eda_statistics.ipynb     # -> EDA, statistical tests, reports/figures/fig01-10
+# run notebooks/03_churn_modelling.ipynb    # -> models/churn_model.joblib, reports/model_results.json, fig11-16
+python -m src.retailpulse.scoring           # -> app/data/scores_*.csv for the dashboard
+```
+
+## Dashboard
+
+```powershell
+streamlit run app/streamlit_app.py
+```
+
+The dashboard needs only committed files (the 0.2 MB model and pre-scored CSVs), not the raw data. Tabs:
+- **Overview:** KPIs, risk bands, a risk-vs-value chart and a priority contact list (downloadable).
+- **Customer lookup:** one customer's features compared with a typical customer.
+- **What-if:** change behaviour and see the churn probability respond.
+- **Batch scoring:** upload a CSV of features and download the scores.
+- **Model performance:** test metrics and key figures.
+
+Snapshots: **1 Dec 2011** (latest data; outcome unknown, "who to contact now") and **1 Sep 2011** (test month; actual outcome shown, so users can check the model).
+
 ## Phase roadmap
 
 1. Data understanding, data dictionary, audit and problem framing. Done: [problem statement](docs/01_problem_statement.md), [dataset & data dictionary](docs/02_dataset.md), [audit output](reports/data_audit.json).
 2. Cleaning, EDA and statistical tests. Done: [cleaning module](src/retailpulse/cleaning.py), [cleaning log](reports/cleaning_log.json), [EDA notebook](notebooks/02_eda_statistics.ipynb), [figures](reports/figures/).
 3. Churn modelling. Done: [modelling module](src/retailpulse/modeling.py), [notebook](notebooks/03_churn_modelling.ipynb), [results](reports/model_results.json). Gradient Boosting: test ROC-AUC 0.774, PR-AUC 0.746, macro-F1 0.693.
-4. Segmentation/PCA, FastAPI, Streamlit, optional Power BI.
+4. Churn-risk dashboard. Done: [Streamlit app](app/streamlit_app.py), [scoring script](src/retailpulse/scoring.py).
 5. Optional cloud deployment, documentation, report and viva preparation.
 
 ## Methodology safeguards

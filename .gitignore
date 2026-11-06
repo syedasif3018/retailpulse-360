@@ -10,6 +10,7 @@ data/processed/*
 !data/processed/.gitkeep
 models/*.joblib
 models/*
+!models/churn_model.joblib
 !models/.gitkeep
 *.parquet
 .vscode/
