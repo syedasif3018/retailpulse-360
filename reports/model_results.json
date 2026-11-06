@@ -1,0 +1,292 @@
+{
+  "split": {
+    "train": {
+      "rows": 16914,
+      "churn_rate": 0.6558
+    },
+    "val": {
+      "rows": 4324,
+      "churn_rate": 0.6339
+    },
+    "refit": {
+      "rows": 29871,
+      "churn_rate": 0.6416
+    },
+    "test": {
+      "rows": 4323,
+      "churn_rate": 0.5047
+    }
+  },
+  "train_cutoffs": [
+    "2010-12-01",
+    "2011-01-01",
+    "2011-02-01",
+    "2011-03-01"
+  ],
+  "validation_cutoff": "2011-06-01",
+  "test_cutoff": "2011-09-01",
+  "refit_cutoffs": [
+    "2010-12-01",
+    "2011-01-01",
+    "2011-02-01",
+    "2011-03-01",
+    "2011-04-01",
+    "2011-05-01",
+    "2011-06-01"
+  ],
+  "selected_model": "Gradient Boosting",
+  "threshold": 0.5,
+  "tuned_params": {
+    "Logistic Regression": {
+      "clf__C": 0.028585493941961918
+    },
+    "Decision Tree": {
+      "clf__min_samples_leaf": 50,
+      "clf__max_depth": 4,
+      "clf__criterion": "gini"
+    },
+    "Random Forest": {
+      "clf__n_estimators": 400,
+      "clf__min_samples_leaf": 1,
+      "clf__max_features": "sqrt",
+      "clf__max_depth": 8
+    },
+    "Gradient Boosting": {
+      "clf__l2_regularization": 10.0,
+      "clf__learning_rate": 0.02195199700425886,
+      "clf__max_iter": 200,
+      "clf__max_leaf_nodes": 7,
+      "clf__min_samples_leaf": 200
+    }
+  },
+  "train_group_cv_auc": {
+    "Logistic Regression": [
+      0.7832,
+      0.0133
+    ],
+    "Decision Tree": [
+      0.7708,
+      0.0145
+    ],
+    "Random Forest": [
+      0.7859,
+      0.0162
+    ],
+    "Gradient Boosting": [
+      0.7837,
+      0.014
+    ]
+  },
+  "validation": {
+    "Baseline: majority class": {
+      "threshold": 0.5,
+      "accuracy": 0.6339,
+      "balanced_accuracy": 0.5,
+      "precision_churn": 0.6339,
+      "recall_churn": 1.0,
+      "f1_churn": 0.7759,
+      "macro_f1": 0.388,
+      "roc_auc": 0.5,
+      "pr_auc": 0.6339,
+      "brier": 0.3661,
+      "tn": 0,
+      "fp": 1583,
+      "fn": 0,
+      "tp": 2741
+    },
+    "Baseline: recency > 90 days": {
+      "threshold": 0.2466,
+      "accuracy": 0.6915,
+      "balanced_accuracy": 0.6926,
+      "precision_churn": 0.7972,
+      "recall_churn": 0.6884,
+      "f1_churn": 0.7388,
+      "macro_f1": 0.681,
+      "roc_auc": 0.7456,
+      "pr_auc": 0.8167,
+      "brier": 0.2794,
+      "tn": 1103,
+      "fp": 480,
+      "fn": 854,
+      "tp": 1887
+    },
+    "Logistic Regression": {
+      "threshold": 0.55,
+      "accuracy": 0.7394,
+      "balanced_accuracy": 0.7284,
+      "precision_churn": 0.8099,
+      "recall_churn": 0.7694,
+      "f1_churn": 0.7891,
+      "macro_f1": 0.724,
+      "roc_auc": 0.7963,
+      "pr_auc": 0.8441,
+      "brier": 0.1737,
+      "tn": 1088,
+      "fp": 495,
+      "fn": 632,
+      "tp": 2109
+    },
+    "Decision Tree": {
+      "threshold": 0.48,
+      "accuracy": 0.7583,
+      "balanced_accuracy": 0.7278,
+      "precision_churn": 0.7906,
+      "recall_churn": 0.8417,
+      "f1_churn": 0.8153,
+      "macro_f1": 0.7329,
+      "roc_auc": 0.7893,
+      "pr_auc": 0.8257,
+      "brier": 0.1745,
+      "tn": 972,
+      "fp": 611,
+      "fn": 434,
+      "tp": 2307
+    },
+    "Random Forest": {
+      "threshold": 0.47,
+      "accuracy": 0.7625,
+      "balanced_accuracy": 0.7267,
+      "precision_churn": 0.7855,
+      "recall_churn": 0.8603,
+      "f1_churn": 0.8212,
+      "macro_f1": 0.7338,
+      "roc_auc": 0.8015,
+      "pr_auc": 0.852,
+      "brier": 0.1714,
+      "tn": 939,
+      "fp": 644,
+      "fn": 383,
+      "tp": 2358
+    },
+    "Gradient Boosting": {
+      "threshold": 0.5,
+      "accuracy": 0.7562,
+      "balanced_accuracy": 0.7295,
+      "precision_churn": 0.795,
+      "recall_churn": 0.8293,
+      "f1_churn": 0.8118,
+      "macro_f1": 0.733,
+      "roc_auc": 0.8016,
+      "pr_auc": 0.854,
+      "brier": 0.1736,
+      "tn": 997,
+      "fp": 586,
+      "fn": 468,
+      "tp": 2273
+    }
+  },
+  "test": {
+    "Logistic Regression": {
+      "threshold": 0.55,
+      "accuracy": 0.7051,
+      "balanced_accuracy": 0.7042,
+      "precision_churn": 0.6776,
+      "recall_churn": 0.7929,
+      "f1_churn": 0.7307,
+      "macro_f1": 0.7024,
+      "roc_auc": 0.7705,
+      "pr_auc": 0.7359,
+      "brier": 0.1957,
+      "tn": 1318,
+      "fp": 823,
+      "fn": 452,
+      "tp": 1730
+    },
+    "Decision Tree": {
+      "threshold": 0.48,
+      "accuracy": 0.6847,
+      "balanced_accuracy": 0.683,
+      "precision_churn": 0.638,
+      "recall_churn": 0.8676,
+      "f1_churn": 0.7353,
+      "macro_f1": 0.6728,
+      "roc_auc": 0.7639,
+      "pr_auc": 0.7125,
+      "brier": 0.1966,
+      "tn": 1067,
+      "fp": 1074,
+      "fn": 289,
+      "tp": 1893
+    },
+    "Random Forest": {
+      "threshold": 0.47,
+      "accuracy": 0.7011,
+      "balanced_accuracy": 0.6995,
+      "precision_churn": 0.6532,
+      "recall_churn": 0.8694,
+      "f1_churn": 0.746,
+      "macro_f1": 0.6915,
+      "roc_auc": 0.7741,
+      "pr_auc": 0.7445,
+      "brier": 0.1932,
+      "tn": 1134,
+      "fp": 1007,
+      "fn": 285,
+      "tp": 1897
+    },
+    "Gradient Boosting": {
+      "threshold": 0.5,
+      "accuracy": 0.6991,
+      "balanced_accuracy": 0.6978,
+      "precision_churn": 0.6613,
+      "recall_churn": 0.8277,
+      "f1_churn": 0.7352,
+      "macro_f1": 0.6933,
+      "roc_auc": 0.7736,
+      "pr_auc": 0.7458,
+      "brier": 0.193,
+      "tn": 1216,
+      "fp": 925,
+      "fn": 376,
+      "tp": 1806
+    },
+    "Baseline: majority class": {
+      "threshold": 0.5,
+      "accuracy": 0.5047,
+      "balanced_accuracy": 0.5,
+      "precision_churn": 0.5047,
+      "recall_churn": 1.0,
+      "f1_churn": 0.6709,
+      "macro_f1": 0.3354,
+      "roc_auc": 0.5,
+      "pr_auc": 0.5047,
+      "brier": 0.4953,
+      "tn": 0,
+      "fp": 2141,
+      "fn": 0,
+      "tp": 2182
+    },
+    "Baseline: recency > 90 days": {
+      "threshold": 0.2466,
+      "accuracy": 0.6644,
+      "balanced_accuracy": 0.6638,
+      "precision_churn": 0.652,
+      "recall_churn": 0.7186,
+      "f1_churn": 0.6837,
+      "macro_f1": 0.6631,
+      "roc_auc": 0.7078,
+      "pr_auc": 0.6801,
+      "brier": 0.2514,
+      "tn": 1304,
+      "fp": 837,
+      "fn": 614,
+      "tp": 1568
+    }
+  },
+  "permutation_importance": {
+    "active_months": 0.0234,
+    "recency_days": 0.0155,
+    "frequency": 0.008,
+    "total_quantity": 0.0064,
+    "tenure_days": 0.005,
+    "monetary": 0.0034,
+    "frequency_recent": 0.0017,
+    "monetary_recent": 0.0016,
+    "return_rate": 0.0007,
+    "country_group": 0.0002,
+    "avg_order_value": 0.0001,
+    "recent_share_monetary": 0.0001,
+    "avg_days_between_orders": -0.0002,
+    "n_products": -0.0003
+  }
+}
