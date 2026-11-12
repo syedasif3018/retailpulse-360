@@ -1,1 +1,1 @@
-"""RetailPulse 360 learning project."""
+"""RetailPulse 360: customer churn prediction and retail analytics."""

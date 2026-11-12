@@ -70,7 +70,7 @@ The classes are moderately imbalanced, with **churn as the majority class**. The
 1. **Real transactions** with customer IDs and timestamps, which is exactly what is needed to measure whether, and when, a customer buys again.
 2. **Two years of history** allow several historical cutoffs, each with a 365-day feature window and a 90-day outcome window, plus a time-ordered train/validation/test split.
 3. **Enough volume:** about 4,300 eligible customers per cutoff, so roughly 40k labelled snapshots across cutoffs.
-4. **Realistic messiness** (cancellations, missing IDs, duplicates, non-product codes) exercises the cleaning steps the course requires.
+4. **Realistic messiness** (cancellations, missing IDs, duplicates, non-product codes) exercises the cleaning steps any real retail dataset needs.
 5. **Openly licensed (CC BY 4.0)** and widely cited, so results can be reproduced.
 
 **Limitations:** one retailer, mostly UK wholesale customers, 2009–2011. There is no customer demographic or marketing data. "Churn" is a behavioural proxy, not a cancelled contract.

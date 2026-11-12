@@ -15,3 +15,6 @@ models/*
 *.parquet
 .vscode/
 dist/
+
+# Local working documents (not part of the repository)
+reports/RetailPulse360_Report.*

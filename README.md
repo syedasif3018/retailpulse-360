@@ -1,12 +1,18 @@
 # RetailPulse 360
 
-**End-to-end customer churn prediction and retail analytics | CSE570 Machine Learning with Python**
+**End-to-end customer churn prediction and retail analytics: from raw transactions to a deployed ML dashboard**
+
+**Tech stack:** Python · pandas · scikit-learn · SciPy · Matplotlib/Seaborn · Streamlit · Altair · Azure App Service · Azure CLI · pytest
 
 **Live dashboard:** https://retailpulse-360-541d.azurewebsites.net (Azure App Service, free tier; the first load after idle can take about a minute)
 
+**LinkedIn post:** https://www.linkedin.com/feed/update/urn:li:activity:7525989022880395264/
+
 ## Problem statement
 
-Given a customer's purchase history up to an observation cutoff, predict whether the customer will have **no qualifying purchase in the following 90 days**. This is a **customer-level binary classification** problem. We will define eligibility and qualifying purchases carefully before modelling. The broader solution will include segmentation, an analyst dashboard, an API and optional Azure deployment.
+Given a customer's purchase history up to an observation cutoff, predict whether the customer will have **no qualifying purchase in the following 90 days**. This is a **customer-level binary classification** problem. Eligibility and qualifying purchases are defined carefully before modelling (see [problem statement](docs/01_problem_statement.md)).
+
+**Results (unseen test month, 1 Sep 2011):** Gradient Boosting reached ROC-AUC **0.774**, PR-AUC **0.746** and macro-F1 **0.693**, against 0.708 ROC-AUC for a simple "no order in 90 days" rule. The 10% of customers it ranks riskiest churned at **82%**.
 
 ## Data source
 
@@ -72,14 +78,13 @@ The dashboard needs only committed files (the 0.2 MB model and pre-scored CSVs),
 
 Snapshots: **1 Dec 2011** (latest data; outcome unknown, "who to contact now") and **1 Sep 2011** (test month; actual outcome shown, so users can check the model).
 
-## Phase roadmap
+## Project phases
 
 1. Data understanding, data dictionary, audit and problem framing. Done: [problem statement](docs/01_problem_statement.md), [dataset & data dictionary](docs/02_dataset.md), [audit output](reports/data_audit.json).
 2. Cleaning, EDA and statistical tests. Done: [cleaning module](src/retailpulse/cleaning.py), [cleaning log](reports/cleaning_log.json), [EDA notebook](notebooks/02_eda_statistics.ipynb), [figures](reports/figures/).
 3. Churn modelling. Done: [modelling module](src/retailpulse/modeling.py), [notebook](notebooks/03_churn_modelling.ipynb), [results](reports/model_results.json). Gradient Boosting: test ROC-AUC 0.774, PR-AUC 0.746, macro-F1 0.693.
 4. Churn-risk dashboard. Done: [Streamlit app](app/streamlit_app.py), [scoring script](src/retailpulse/scoring.py).
 5. Cloud deployment. Done: [Azure App Service, Free F1](docs/04_deployment.md) via a slim [package](deploy/make_package.py).
-6. Report and viva preparation.
 
 ## Methodology safeguards
 
@@ -87,7 +92,3 @@ Snapshots: **1 Dec 2011** (latest data; outcome unknown, "who to contact now") a
 - Keep all future outcomes out of features; time-based evaluation and no test-set tuning.
 - Define valid orders and handle cancellation/returns, missing customer IDs, and class imbalance transparently.
 - Never claim that the historic data predicts current real-world retail churn without external validation.
-
-## Academic assignment deliverables
-
-Data dictionary; cleaning and EDA; one suitable statistical test; baseline + at least three ML models; cross-validation, tuning, metrics, interpretation; report, viva, GitHub evidence, LinkedIn post.
